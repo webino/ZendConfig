@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/zend-config",
+    "name": "webino/zend-config",
     "description": "provides a nested object property based user interface for accessing this configuration data within application code",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -11,6 +11,9 @@
         "psr-4": {
             "Zend\\Config\\": "src/"
         }
+    },
+    "replace": {
+        "zendframework/zend-config": "self.version"
     },
     "require": {
         "php": "^5.5 || ^7.0",
