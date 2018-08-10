@@ -51,14 +51,14 @@ class Config implements Countable, Iterator, ArrayAccess
      * Data is read-only unless $allowModifications is set to true
      * on construction.
      *
-     * @param  array   $array
+     * @param  iterable   $config
      * @param  bool $allowModifications
      */
-    public function __construct(array $array, $allowModifications = false)
+    public function __construct(iterable $config, $allowModifications = false)
     {
         $this->allowModifications = (bool) $allowModifications;
 
-        foreach ($array as $key => $value) {
+        foreach ($config as $key => $value) {
             if (is_array($value)) {
                 $this->data[$key] = new static($value, $this->allowModifications);
             } else {
